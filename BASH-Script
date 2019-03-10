@@ -8,15 +8,15 @@ cd $path
 if [ -f Makefile ]; 
 then 
 	make
-	if [ $? -eq 0 ]; 
+	if [[ $? -eq 0 ]]; 
 	then
 		COMPILE="PASS"
 		valgrind --leak-check=full --error-exitcode=1 ./main
-		if [ $? -eq 0 ]; 
+		if [[ $? -eq 0 ]]; 
 		then
 			MEMCHECK="PASS"
 			valgrind --tool=helgrind --error-exitcode=1 ./main
-			if [ $? -eq 0 ]; 
+			if [[ $? -eq 0 ]]; 
 			then
 				THREAD="PASS"
 				echo "0"
@@ -27,7 +27,7 @@ then
 		else
 			MEMCHECK="FAIL"
 			valgrind --tool=helgrind --error-exitcode=1 ./main
-			if [ $? -eq 0]; 
+			if [[ $? -eq 0 ]]; 
 			then
 				THREAD="PASS"
 				echo "2"
