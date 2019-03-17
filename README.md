@@ -10,3 +10,5 @@ the script will return a number between 0 to 7 that indicates what fails and wha
 the first bit checking for compilation, then memory leaks and the last bit for thread race.
 
 for exaple: 011 = compilation pass, memory and thread fails.
+
+Names: Yotam Dafna, Tomer hazan
